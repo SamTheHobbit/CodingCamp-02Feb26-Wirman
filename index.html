@@ -4,23 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List - Wirman</title>
+    
     <!-- CSS External -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
     <!-- header content -->
     <header>
-
+        <h1 class="type-2xl font-bold pb-8">Todo List (Wirman)</h1>
     </header>
 
     <!-- main content -->
     <main>
+        <section>
+            <form>
+                <!-- todo input -->
+                <input class="border p-2 rounded" type="text" id="todo-input" placeholder="Enter a new todo item">
 
+                <!-- date input -->
+                <input class="border p-2 rounded" type="date" id="todo-date" placeholder="Enter due date">
+            </form>
+            <!-- add button -->
+            <button class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600" onclick="addtodo()" type="button">Add Todo</button>
+        </section>
+
+        <section class="flex pt-2 justify-between">
+            <!-- clear all button -->
+            <button class="border rounded p-2 bg-red-500 text-white" onclick="deletealltodos()">Clear All Todos</button>
+            
+            <!-- filter option -->
+            <button class="border rounded p-2 bg-blue-500 text-white">Filter Todos</button>
+        </section>
+
+        <section class="pt-2">
+            <header>
+                <h1 class="text-2xl font-semibold">List of todos</h1>
+            </header>
+            <ul class="pt-2" id="todo-list">
+                <li> No todo list available</li>
+            </ul>
+        </section>
     </main>
 
     <!-- footercontent -->
-    <footer>
-
+    <footer class="pt-8">
+        <p class="text-center text-gray-500">© 2026 Wirman's Todo List</p>
     </footer>
 
     <!-- javascript external -->
